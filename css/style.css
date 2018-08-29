@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Mitr');
+
+
+body{
+	font-family: 'Mitr', sans-serif;
+    background-image:url(../img/pastar.jpg); 
+}
+.tot_calc{
+    width: 300px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0%;
+    bottom: 20%;
+    height:315px;
+    margin: auto;
+    border: 1px solid #ccc;
+    padding: 5px;
+    background: #fff;
+}
+.tot_calc div{
+    display: flex;
+    justify-content: space-between;
+}
+#calc_val{
+    width: 100%;
+    background: #1b1919e0;
+    color: #fff;
+}
+#calc_val:focus {
+    outline: none;
+    box-shadow:none;
+    
+}
+.tot_calc div .btn:focus,.btn:active:focus,.btn.active:focus,
+.btn.focus,.btn:active.focus,.btn:active.focus {
+    outline: none;
+    box-shadow:none;
+}
+.tot_calc div button{
+    width: 100%;
+    text-align: center;
+    margin: 1px;
+    cursor: pointer;
+    font-size: 19px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.tot_calc div button:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, .8);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+.tot_calc div button:focus:not(:active)::after {
+  animation: ripple 0.4s ease-out;
+}
+
+.reset{
+    background:#435B65;
+    color: #fff;
+}
+.root img{
+    max-width: 40%;
+}
+.zero_div .equal{
+    background: #E5345E;
+    color: #fff;
+    border: 1px solid transparent;
+}
+.zero_div button{
+    width: 25% !important;
+}
+.zero_div button:first-child{
+    width: 50% !important
+}
